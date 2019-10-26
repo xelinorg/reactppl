@@ -17,9 +17,9 @@ const util = {
   },
   fixUsable: (memory, person, usable, mode) => {
     if (Object.keys(usable).length < 1 || !usable.Icon || !usable.Icon.URL) {
-      if (!usable.Icon) {
-        usable.Icon = {URL: noImage}
-      } else if (!usable.Icon.URL) {
+      if (!usable.Icon && mode === 'write') {
+        usable.Icon = { URL: noImage }
+      } else if (!usable.Icon.URL  && mode === 'write') {
         usable.Icon.URL = noImage
       }
     }
@@ -82,7 +82,7 @@ const util = {
       },
       detail: {
         Icon: {
-          URL: ''
+          URL: noImage
         }
       }
     }
