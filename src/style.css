@@ -11,10 +11,16 @@
 
 .make-active {
   color: green;
+  background-color: whiteSmoke;
+  border-radius: 6px 6px;
+  cursor: pointer
 }
 
 .make-inactive {
   color: grey;
+  border-radius: 6px 6px;
+  background-color: white;
+  cursor: pointer
 }
 
 .arrange-bar > button {
@@ -66,8 +72,14 @@
   margin-left: auto;
   margin-right: auto;
   width: auto;
-  text-align: left;
   max-height: 200px;
+  align-self: center;
+}
+
+.personalize-card > a {
+  opacity: 0.6;
+  align-self: flex-end;
+  padding-right: 3px;
 }
 
 .equalize-people-filled {
@@ -81,17 +93,21 @@
 }
 
 .equalize-people-filled > tbody > tr:nth-child(odd) {
-   background-color: whiteSmoke;
+   background-color: lightgrey;
 }
 
 .equalize-people-filled > tbody > tr:hover{
-   background-color: white;
+   background-color: #00800066;
 }
 
 .equalize-people-filled > tbody > tr[data-selected=true]{
   color: green;
-  background-color: white;
-  opacity: 0.7;
+  opacity: 0.8;
+}
+
+.equalize-people-filled > tbody > tr[data-selected=true]:hover{
+  color: #001580;
+  opacity: 0.8;
 }
 
 .equalize-people-empty {
@@ -101,12 +117,36 @@
 }
 
 hr {
-  width: 1px;
-  background-color: ivory;
+  color: whiteSmoke;
+}
+
+.user-input > form > label {
+  opacity: 0.6;
+  color: green;
+}
+
+.user-input > form > label::after {
+  padding-left: 9px;
+  content: "X";
+  color: red;
+  opacity: 0.6;
+  cursor: pointer
 }
 
 @media screen and (max-width: 1024px) {
   .contain-result {
     flex-direction: column;
   }
+  hr {
+    width: 100%;
+    color: whiteSmoke;
+  }
+}
+
+a:link {
+  color: #001580;
+}
+
+a:hover {
+  color: #1926d5ed;
 }

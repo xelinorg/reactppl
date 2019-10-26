@@ -61,6 +61,14 @@ class App extends React.Component {
       }))
     }
 
+    this.resetFilter = () => {
+      this.setState(state=>({
+        filter: '',
+        people: util.filterPeople(activeList, ''),
+        person: util.filterPerson(memory, activeList, '', state)
+      }))
+    }
+
     this.selectPerson = (person) => {
       // if has been visited return from memory
       const pfound = util.memoryFind(memory, person)
@@ -105,6 +113,7 @@ class App extends React.Component {
     this.state = {
       toggleGender: this.toggleGender,
       selectPerson: this.selectPerson,
+      resetFilter: this.resetFilter,
       listLength: genderLength,
       gender: '',
       filter: '',

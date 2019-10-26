@@ -23,9 +23,9 @@ class Search extends React.Component {
     }
   }
 
-  handleChange(context) {
-    return function(){
-      context.filterPeople(arguments)
+  resetFilter(context) {
+    return () => {
+      context.resetFilter(this.setState({value: ''}))
     }
   }
 
@@ -38,7 +38,7 @@ class Search extends React.Component {
           <form>
           <input name={searchHash} type={textType} value={this.state.value} onChange={this.onValueChange} placeholder={searchHash}/>
           <span>&nbsp;</span>
-          {ctx.gender && ctx.people.length < ctx.listLength && <label for={searchHash}>{ctx.people.length} out of {ctx.listLength}</label>}
+          {ctx.gender && ctx.people.length < ctx.listLength && <label htmlFor={searchHash} onClick={this.resetFilter(ctx)}>{ctx.people.length} out of {ctx.listLength}</label>}
           </form>
         )}
         </StatusContext.Consumer>
