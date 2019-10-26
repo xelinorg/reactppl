@@ -13,6 +13,7 @@ class Result extends React.Component {
     return (
       <section className={containResult}>
         <PeopleList people-header={this.props['people-header']}></PeopleList>
+        <hr/>
         <PersonCard></PersonCard>
       </section>
     )
