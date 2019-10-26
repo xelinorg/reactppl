@@ -1,0 +1,113 @@
+.user-input > form {
+  margin: 3px;
+  padding: 3px;
+}
+
+.user-input > form > label {
+  opacity: 0.75;
+  color: green;
+}
+
+.make-active {
+  color: green;
+}
+
+.make-inactive {
+  color: grey;
+}
+
+.arrange-bar > button {
+  margin: 3px;
+  padding: 3px;
+}
+
+.contain-result {
+  display: flex;
+  min-height: 350px;
+}
+
+.contain-result > * {
+  flex: 1;
+  background-color: lightgrey;
+  margin: 3px;
+  padding: 3px;
+}
+
+.people-list-header {
+  opacity: 0.65;
+  height: 100%;
+}
+
+.personalize-card {
+  background-color: #f6f6f6;
+  transition: color 2s;
+}
+
+.personalize-card > * {
+  margin: 3px;
+  padding: 3px;
+}
+
+.personalize-card > h4 {
+  opacity: 0.65;
+  white-space: pre;
+}
+
+.personalize-card > img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  max-height: 250px;
+}
+
+.personalize-card > a {
+  opacity: 0.65;
+  float: right;
+}
+
+.equalize-people-filled {
+  table-layout:fixed;
+  width:100%;
+  min-width: 50%;
+  padding-top: 10px;
+  margin: 5px;
+  border-collapse: separate;
+  border-spacing: 0 5px
+}
+
+.equalize-people-filled > thead > tr {
+  padding-top: 10px;
+  margin: 5px;
+  width: 100%;
+}
+
+.equalize-people-filled > thead > tr > th {
+  text-align: left;
+}
+
+.equalize-people-filled > tbody {
+  cursor: pointer
+}
+
+.equalize-people-filled > tbody > tr:nth-child(odd) {
+   background-color: #ccc;
+}
+
+.equalize-people-filled > tbody > tr:hover{
+   background-color: white;
+}
+
+.equalize-people-filled > tbody > tr[data-selected=true]{
+  background-color: whiteSmoke;
+  opacity: 0.8;
+}
+
+.equalize-people-empty {
+  table-layout:fixed;
+  height: 0px;
+  padding-top: 10px;
+  margin: 5px;
+  text-align: left;
+  width: 100%;
+}
