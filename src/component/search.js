@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ButtonBar from './button-bar.js'
-import StatusContext from '../context/status.js'
+import StatusContext from './context/status.js'
 
 const userInput = 'user-input'
 const searchHash = 'search'

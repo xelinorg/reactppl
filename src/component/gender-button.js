@@ -1,5 +1,6 @@
 import React from 'react'
-import StatusContext from '../context/status.js'
+
+import StatusContext from './context/status.js'
 
 const gender = 'gender'
 const activeClass = 'make-active'

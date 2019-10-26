@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StatusContext from '../context/status.js'
+import StatusContext from './context/status.js'
 
 const personalizeCard = 'personalize-card'
 const seeMore = 'See more...'
@@ -28,7 +28,7 @@ class PersonCard extends React.Component {
       <StatusContext.Consumer>
       {(ctx)=>(
         <article className={personalizeCard}>
-          <h4>{ctx.person.master.surname} {ctx.person.master.name}</h4>
+          <h1>{ctx.person.master.surname} {ctx.person.master.name}</h1>
           <img src={this.fixImage(ctx)} alt={ctx.person.master.name}/>
           <p>{this.fixText(ctx)}</p>
           {this.fixSeeMore(ctx) && <a href={this.fixSeeMore(ctx)} target={openTarget}>{seeMore}</a>}

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import StatusContext from '../context/status.js'
+import StatusContext from './context/status.js'
 
 const equalizePeopleEmpty = 'equalize-people-empty'
 const equalizePeopleFilled = 'equalize-people-filled'

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import './style.css'
 
 import {PageHeader, Search, Result} from './component'
-import StatusContext from './context/status'
+import StatusContext from './component/context/status'
 import {ApiResource, util} from './common'
 
 // reporting
