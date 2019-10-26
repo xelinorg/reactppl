@@ -54,19 +54,11 @@ class App extends React.Component {
     }
 
     this.filterPeople = (search) => {
-      this.setState(state=>({
-        filter: search,
-        people: util.filterPeople(activeList, search),
-        person: util.filterPerson(memory, activeList, search, state)
-      }))
+      util.doFilter(this.setState.bind(this), memory, activeList, search)
     }
 
     this.resetFilter = () => {
-      this.setState(state=>({
-        filter: '',
-        people: util.filterPeople(activeList, ''),
-        person: util.filterPerson(memory, activeList, '', state)
-      }))
+      util.doFilter(this.setState.bind(this),  memory, activeList, '')
     }
 
     this.selectPerson = (person) => {
@@ -88,23 +80,13 @@ class App extends React.Component {
           duckduckgoSuc++
           const usable = util.getUsable(ddgRes)
           util.fixUsable(memory, person, usable, 'write')
-          this.setState(state=>({
-            person: {
-              master: person,
-              detail: usable
-            }
-          }))
+          util.doSelect(this.setState.bind(this), person, usable)
         },
         ddgErr => {
           duckduckgoErr++
           const usable = {}
           util.fixUsable(memory, person, usable, 'write')
-          this.setState(state=>({
-            person: {
-              master: person,
-              detail: usable
-            }
-          }))
+          util.doSelect(this.setState.bind(this), person, usable)
           console.log(ddgErr)
         }
       )

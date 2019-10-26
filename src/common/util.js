@@ -75,6 +75,13 @@ const util = {
   filterPeople: (activeList, activeFilter) => {
     return activeList.filter(p => p.name.includes(activeFilter) || p.surname.includes(activeFilter))
   },
+  doFilter: (setState, memory, activeList, search) => {
+    setState(state=>({
+      filter: search,
+      people: util.filterPeople(activeList, search),
+      person: util.filterPerson(memory, activeList, search, state)
+    }))
+  },
   personModel: () => {
     return {
       master: {
@@ -95,6 +102,15 @@ const util = {
       util.fixUsable(memory, pfound[0], pfound[1], 'read')
     }
     return pfound
+  },
+  doSelect: (setState, person, usable) => {
+    setState(state=>({
+      person: {
+        master: person,
+        detail: usable
+      }
+    }))
+
   }
 }
 export default util
