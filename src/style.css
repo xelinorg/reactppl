@@ -30,13 +30,16 @@
 }
 .contain-result > article {
   margin: 3px;
+  margin-left: 9px;
   padding: 3px;
 }
 
 .contain-result > section {
-  margin-top: 12px;
-    padding: 3px;
+  margin-top: 20px;
+  padding: 3px;
+  margin-left: 9px;
   flex-grow: 1;
+  min-height: 200px;
 }
 
 .people-list-header {
@@ -50,10 +53,12 @@
   flex-direction: column;
 }
 
-.personalize-card > h4 {
+.personalize-card > h1 {
+  min-width: 320px;
   flex-grow: 1;
   min-height: 41px;
   margin-bottom: 0px;
+  opacity: 0.6;
 }
 
 .personalize-card > img {
@@ -63,13 +68,12 @@
   width: auto;
   text-align: left;
   max-height: 200px;
-  min-width: 320px;
 }
 
 .equalize-people-filled {
   table-layout:fixed;
   text-align: left;
-  width:100%;
+  width: 100%;
 }
 
 .equalize-people-filled > tbody {
@@ -85,8 +89,9 @@
 }
 
 .equalize-people-filled > tbody > tr[data-selected=true]{
-  background-color: #ccc;
-  opacity: 0.8;
+  color: green;
+  background-color: white;
+  opacity: 0.7;
 }
 
 .equalize-people-empty {
@@ -98,4 +103,10 @@
 hr {
   width: 1px;
   background-color: ivory;
+}
+
+@media screen and (max-width: 1024px) {
+  .contain-result {
+    flex-direction: column;
+  }
 }
