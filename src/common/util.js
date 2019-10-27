@@ -24,6 +24,7 @@ const util = {
         usable.Icon.URL = noImage
       }
     }
+    if (memory.length > 127) memory.shift()
     mode === 'write' && (memory.push([person, usable]))
   },
   uinamesOption: (genderLength, genderIs) => {
