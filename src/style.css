@@ -63,6 +63,7 @@
   min-width: 320px;
   flex-grow: 1;
   min-height: 41px;
+  max-height: 41px;
   margin-bottom: 0px;
   opacity: 0.6;
 }
@@ -93,7 +94,7 @@
 }
 
 .equalize-people-filled > tbody > tr:nth-child(odd) {
-   background-color: lightgrey;
+   background-color: #d3d3d361;
 }
 
 .equalize-people-filled > tbody > tr:hover{
@@ -123,14 +124,37 @@ hr {
 .user-input > form > label {
   opacity: 0.6;
   color: green;
+  font-size: 12px;
+  padding-left: 3px;
+  cursor: pointer
 }
 
 .user-input > form > label::after {
-  padding-left: 9px;
-  content: "X";
+  content: "x";
   color: red;
   opacity: 0.6;
-  cursor: pointer
+  cursor: pointer;
+  margin-left: 3px;
+  margin-top: 0px;
+  background: white;
+  padding: 3px 6px;
+  border-radius: 25%;
+  font-size: 12px;
+}
+
+.user-input > form > label:hover::after {
+  opacity: 1;
+  background: red;
+  color: white;
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.no-result {
+  min-width: 338px;
+  align-self: center;
+  text-align: center;
+  color: grey;
 }
 
 @media screen and (max-width: 1024px) {
@@ -139,7 +163,6 @@ hr {
   }
   hr {
     width: 100%;
-    color: whiteSmoke;
   }
 }
 
@@ -149,4 +172,11 @@ a:link {
 
 a:hover {
   color: #1926d5ed;
+}
+
+.debug {
+  background: whiteSmoke;
+  list-style-type: square;
+  list-style-position: outside;
+  list-style-image: none;
 }

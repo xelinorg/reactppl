@@ -29,6 +29,10 @@ class Search extends React.Component {
     }
   }
 
+  showReset(context) {
+    return context.gender && context.people.length < context.listLength
+  }
+
   render() {
     return (
       <section className={userInput}>
@@ -38,7 +42,7 @@ class Search extends React.Component {
           <form>
           <input name={searchHash} type={textType} value={this.state.value} onChange={this.onValueChange} placeholder={searchHash}/>
           <span>&nbsp;</span>
-          {ctx.gender && ctx.people.length < ctx.listLength && <label htmlFor={searchHash} onClick={this.resetFilter(ctx)}>{ctx.people.length} out of {ctx.listLength}</label>}
+          {this.showReset(ctx) && <label htmlFor={searchHash} onClick={this.resetFilter(ctx)}>{ctx.people.length} out of {ctx.listLength}</label>}
           </form>
         )}
         </StatusContext.Consumer>

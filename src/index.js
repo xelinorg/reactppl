@@ -13,9 +13,10 @@ let uinamesSuc = 0, uinamesErr = 0, duckduckgoSuc = 0 , duckduckgoErr = 0, memor
 // runtime
 const memory = []
 let activeList
+let debug = util.debug()
+const genderLength = util.genderLength()
 
 // static
-const genderLength = 10
 const pageHeader = 'React People'
 const genderOption = ['Men', 'Women']
 const peopleHeader = ['First Name', 'Last Name', 'Gender', 'Region']
@@ -84,9 +85,7 @@ class App extends React.Component {
         },
         ddgErr => {
           duckduckgoErr++
-          const usable = {}
-          util.fixUsable(memory, person, usable, 'write')
-          util.doSelect(this.setState.bind(this), person, usable)
+          util.doSelect(this.setState.bind(this), person, null)
           console.log(ddgErr)
         }
       )
@@ -110,7 +109,7 @@ class App extends React.Component {
         <PageHeader page-header={pageHeader}></PageHeader>
         <Search on-value-change={this.filterPeople} gender-option={genderOption}></Search>
         <Result people-header={peopleHeader}></Result>
-        {window.location.search === '?debug' && (<ul>
+        {debug && (<ul className="debug">
           <li>memory: length {memory.length} hit {memoryHit}</li>
           <li>uinames: success {uinamesSuc} error {uinamesErr}</li>
           <li>duckduckgo: success {duckduckgoSuc} error {duckduckgoErr}</li>
