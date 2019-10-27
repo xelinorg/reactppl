@@ -1,4 +1,5 @@
 import util from './util.js'
+
 function ApiResource(option){
   const opt = option || {}
   this.base = opt.base || 'localhost'

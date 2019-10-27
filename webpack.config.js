@@ -29,7 +29,7 @@ module.exports = {
     // https check disabled
     disableHostCheck: true,
     compress: true,
-    https: true,
+    https: false,
     contentBase: './src/',
     // Make webpack-dev-server live-reload when your
     // when source changes

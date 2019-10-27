@@ -25,7 +25,10 @@
 
 .arrange-bar > button {
   margin: 3px;
-  padding: 3px;
+  padding-left: revert;
+  padding-right: revert;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .contain-result {
@@ -74,13 +77,22 @@
   margin-right: auto;
   width: auto;
   max-height: 200px;
+  min-height: 200px;
   align-self: center;
+  margin-bottom: 9px;
 }
 
 .personalize-card > a {
   opacity: 0.6;
   align-self: flex-end;
   padding-right: 3px;
+}
+
+.personalize-card > p {
+  min-height: 41px;
+  margin-top: 0px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .equalize-people-filled {
@@ -124,13 +136,17 @@ hr {
 .user-input > form > label {
   opacity: 0.6;
   color: green;
-  font-size: 12px;
+  font-size: 14px;
   padding-left: 3px;
   cursor: pointer
 }
 
+.user-input > form > label:hover {
+  opacity: 0.9;
+}
+
 .user-input > form > label::after {
-  content: "x";
+  content: "X";
   color: red;
   opacity: 0.6;
   cursor: pointer;
@@ -143,11 +159,13 @@ hr {
 }
 
 .user-input > form > label:hover::after {
-  opacity: 1;
+  opacity: 0.7;
   background: red;
   color: white;
   padding-top: 1px;
-  padding-bottom: 1px;
+  padding-bottom: 0px;
+  padding-right: 4px;
+  padding-left: 4px;
 }
 
 .no-result {

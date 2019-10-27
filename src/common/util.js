@@ -1,4 +1,5 @@
 import noImage from './noimage.js'
+
 const util = {
   genderParam: (gender) => {
     const option = {
@@ -125,10 +126,11 @@ const util = {
     return window.location.search.replace('?', '').split('&').reduce((acc, cur) => {
       const pair = cur.split('=')
       if (pair[0] === 'debug') {
-        acc = pair[1]
+        acc = '1'
       }
       return acc
-    }, 0)
+    }, '')
   }
 }
+
 export default util
